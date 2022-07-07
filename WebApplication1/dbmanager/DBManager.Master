@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DBManager.master.cs" Inherits="WebApplication1.dbmanager.DBManager" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../BS/bootstrap.min.css">
+<link rel="stylesheet" href="../BS/bootstrap.css">
+<title><%= Page.Title %></title>
+<style>
+    .footer{
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <H1>ASPOracleManager </H1>
+            <hr />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <hr />
+    <div class="footer">
+    <p> Last updated: April 7th, 2022 </p>
+    <p> NO COPYRIGHT Required, But don't be illegal!!! </p>
+    </div>
+</body>
+</html>

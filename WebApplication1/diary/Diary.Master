@@ -1,0 +1,62 @@
+﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Diary.master.cs" Inherits="WebApplication1.diary.Diary" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" href="../BS/bootstrap.min.css" />
+<link rel="stylesheet" href="../BS/bootstrap.css" />
+<title>PersonalDiary Web Mode</title>
+<style>
+    .jumbotron{
+        padding-top: 0px;
+        padding-bottom: 0px;
+        text-align: center;
+		background-color: blue;
+		color: yellow;
+	}
+	.footer{
+	    left: 0;
+        bottom: 0;
+        width: 100%;
+		text-align: center;
+		background-color: lightblue;
+	}
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+       <div class="jumbotron">
+	     <h1>PersonalDiary Web Mode</h1>
+	     <h5>2022-05-18</h5>
+       </div>
+       <hr>
+       <div class="container" style="margin-top: 15px">
+         <div class="col-sm-12">  
+             <p>Only Administrator can use PersonalDiary Web Mode. Sorry.... </p>
+	         <hr />
+          <% 
+               if (Session["LOGIN_ID"] != null && Session["LOGIN_ID"].Equals("admin"))
+               {
+	      %>
+           <input type="button" onclick="location.href='writediary.aspx'" class="btn btn-primary" value="Write" />
+	       <input type="button" onclick="history.go(-1);" class="btn btn-primary" value="Back" />
+	       <input type="button" onclick="location.href='../default.aspx'" class="btn btn-primary" value="Back To Main Page" />
+	       <input type="submit" OnServerClick="Logout" class="btn btn-primary" value="Logout" runat="server" />
+           <hr />
+          <%
+              }
+          %>
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">    
+         </asp:ContentPlaceHolder>
+         </div>
+        </div>
+        <hr>
+        <div class="footer">
+	      <p> Last updated: May 18th, 2022 </p>
+	      <p> This is not copyrighted. But don't use this illegally! </p>
+        </div>
+    </form>
+</body>
+</html>

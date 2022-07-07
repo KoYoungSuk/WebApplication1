@@ -1,0 +1,436 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE15A3FF-9FA6-485A-86FB-F309A1899BF5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44355</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=2.1.1.0, Culture=neutral, PublicKeyToken=748c6c715e2d42e3, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.2.1.1\lib\net452\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.18.3.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.NonGeneric, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.NonGeneric.4.3.0\lib\net46\System.Collections.NonGeneric.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about.aspx" />
+    <Content Include="dbmanager\easy.aspx" />
+    <Content Include="diary\deletediary.aspx" />
+    <Content Include="diary\detaildiary.aspx" />
+    <Content Include="diary\diarylist.aspx" />
+    <Content Include="diary\modifydiary.aspx" />
+    <Content Include="diary\writediary.aspx" />
+    <Content Include="product\deleteproduct.aspx" />
+    <Content Include="product\detailproduct.aspx" />
+    <Content Include="product\productlist.aspx" />
+    <Content Include="product\default.aspx" />
+    <Content Include="product\modifyproduct.aspx" />
+    <Content Include="product\writeproduct.aspx" />
+    <Content Include="totalboardlist.aspx" />
+    <Content Include="BS\bootstrap-grid.css.map" />
+    <Content Include="BS\bootstrap-grid.min.css.map" />
+    <Content Include="BS\bootstrap-reboot.css.map" />
+    <Content Include="BS\bootstrap-reboot.min.css.map" />
+    <Content Include="BS\bootstrap.css.map" />
+    <Content Include="BS\bootstrap.min.css.map" />
+    <Content Include="dbmanager\default.aspx" />
+    <Content Include="dbmanager\professional.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="deleteboard.aspx" />
+    <Content Include="deletememberinfo.aspx" />
+    <Content Include="detailboard.aspx" />
+    <Content Include="diary\default.aspx" />
+    <Content Include="etc.aspx" />
+    <Content Include="managehomepage.aspx" />
+    <Content Include="Master.master" />
+    <Content Include="memberinfo.aspx" />
+    <Content Include="membermanage.aspx" />
+    <Content Include="modifyboard.aspx" />
+    <Content Include="modifymemberinfo.aspx" />
+    <Content Include="timer.html" />
+    <Content Include="whyimakethis.aspx" />
+    <Content Include="writeboard.aspx" />
+    <Content Include="dbmanager\DBManager.Master" />
+    <Content Include="diary\Diary.Master" />
+    <None Include="packages.config" />
+    <Content Include="product\Product.Master" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FTPProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile10.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile11.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile12.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile3.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile4.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile5.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile6.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile7.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile8.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile9.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BS\bootstrap-grid.css" />
+    <Content Include="BS\bootstrap-grid.min.css" />
+    <Content Include="BS\bootstrap-reboot.css" />
+    <Content Include="BS\bootstrap-reboot.min.css" />
+    <Content Include="BS\bootstrap.css" />
+    <Content Include="BS\bootstrap.min.css" />
+    <Content Include="BS\error.css" />
+    <Content Include="CSS\error.css" />
+    <Content Include="signup.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\DAO.cs" />
+    <Compile Include="DAO\DiaryDAO.cs" />
+    <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="dbmanager\easy.aspx.cs">
+      <DependentUpon>easy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dbmanager\easy.aspx.designer.cs">
+      <DependentUpon>easy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductDTO.cs" />
+    <Compile Include="Model\DiaryDTO.cs" />
+    <Compile Include="diary\deletediary.aspx.cs">
+      <DependentUpon>deletediary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="diary\deletediary.aspx.designer.cs">
+      <DependentUpon>deletediary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="diary\detaildiary.aspx.cs">
+      <DependentUpon>detaildiary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="diary\detaildiary.aspx.designer.cs">
+      <DependentUpon>detaildiary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="diary\diarylist.aspx.cs">
+      <DependentUpon>diarylist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="diary\diarylist.aspx.designer.cs">
+      <DependentUpon>diarylist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="diary\modifydiary.aspx.cs">
+      <DependentUpon>modifydiary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="diary\modifydiary.aspx.designer.cs">
+      <DependentUpon>modifydiary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="diary\writediary.aspx.cs">
+      <DependentUpon>writediary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="diary\writediary.aspx.designer.cs">
+      <DependentUpon>writediary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product\deleteproduct.aspx.cs">
+      <DependentUpon>deleteproduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product\deleteproduct.aspx.designer.cs">
+      <DependentUpon>deleteproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product\detailproduct.aspx.cs">
+      <DependentUpon>detailproduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product\detailproduct.aspx.designer.cs">
+      <DependentUpon>detailproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product\productlist.aspx.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product\productlist.aspx.designer.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product\Product.Master.cs">
+      <DependentUpon>Product.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product\Product.Master.designer.cs">
+      <DependentUpon>Product.Master</DependentUpon>
+    </Compile>
+    <Compile Include="product\modifyproduct.aspx.cs">
+      <DependentUpon>modifyproduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product\modifyproduct.aspx.designer.cs">
+      <DependentUpon>modifyproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product\writeproduct.aspx.cs">
+      <DependentUpon>writeproduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product\writeproduct.aspx.designer.cs">
+      <DependentUpon>writeproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="totalboardlist.aspx.cs">
+      <DependentUpon>totalboardlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="totalboardlist.aspx.designer.cs">
+      <DependentUpon>totalboardlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\BoardDAO.cs" />
+    <Compile Include="Model\BoardDTO.cs" />
+    <Compile Include="dbmanager\DBManager.Master.cs">
+      <DependentUpon>DBManager.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dbmanager\DBManager.Master.designer.cs">
+      <DependentUpon>DBManager.Master</DependentUpon>
+    </Compile>
+    <Compile Include="dbmanager\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dbmanager\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dbmanager\professional.aspx.cs">
+      <DependentUpon>professional.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dbmanager\professional.aspx.designer.cs">
+      <DependentUpon>professional.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deleteboard.aspx.cs">
+      <DependentUpon>deleteboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="deleteboard.aspx.designer.cs">
+      <DependentUpon>deleteboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deletememberinfo.aspx.cs">
+      <DependentUpon>deletememberinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="deletememberinfo.aspx.designer.cs">
+      <DependentUpon>deletememberinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="detailboard.aspx.cs">
+      <DependentUpon>detailboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="detailboard.aspx.designer.cs">
+      <DependentUpon>detailboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="diary\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="diary\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="diary\Diary.Master.cs">
+      <DependentUpon>Diary.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="diary\Diary.Master.designer.cs">
+      <DependentUpon>Diary.Master</DependentUpon>
+    </Compile>
+    <Compile Include="etc.aspx.cs">
+      <DependentUpon>etc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="etc.aspx.designer.cs">
+      <DependentUpon>etc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="managehomepage.aspx.cs">
+      <DependentUpon>managehomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="managehomepage.aspx.designer.cs">
+      <DependentUpon>managehomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master.master.cs">
+      <DependentUpon>Master.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master.master.designer.cs">
+      <DependentUpon>Master.master</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\MemberDAO.cs" />
+    <Compile Include="Model\MemberDTO.cs" />
+    <Compile Include="memberinfo.aspx.cs">
+      <DependentUpon>memberinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="memberinfo.aspx.designer.cs">
+      <DependentUpon>memberinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="membermanage.aspx.cs">
+      <DependentUpon>membermanage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="membermanage.aspx.designer.cs">
+      <DependentUpon>membermanage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modifyboard.aspx.cs">
+      <DependentUpon>modifyboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modifyboard.aspx.designer.cs">
+      <DependentUpon>modifyboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modifymemberinfo.aspx.cs">
+      <DependentUpon>modifymemberinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modifymemberinfo.aspx.designer.cs">
+      <DependentUpon>modifymemberinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="whyimakethis.aspx.cs">
+      <DependentUpon>whyimakethis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="whyimakethis.aspx.designer.cs">
+      <DependentUpon>whyimakethis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="writeboard.aspx.cs">
+      <DependentUpon>writeboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="writeboard.aspx.designer.cs">
+      <DependentUpon>writeboard.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CSS\scp49647\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61090</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44355/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
