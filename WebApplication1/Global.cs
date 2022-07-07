@@ -9,8 +9,8 @@ namespace WebApplication1
     public class Global
     {
         //Default DB ID, PW, URL, PORT, SID (FOR BOARD, MANAGE PRODUCT, DIARY AND MEMBER) 
-        public String dbid = "kys";
-        public String dbpw = "sme62112011";
+        public String dbid = "dbid";
+        public String dbpw = "dbpw";
         public String dburl = "localhost";
         public String dbport = "1521";
         public String dbsid = "xe";
