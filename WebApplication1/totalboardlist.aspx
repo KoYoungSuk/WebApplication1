@@ -6,6 +6,12 @@
           <p>Current User ID: <asp:Label ID="LabelID" runat="server"></asp:Label></p>
           <p>Number of Boards: <asp:Label ID="BoardNumber" runat="server"></asp:Label></p>
           <hr />
+          <p>
+          <label>SEARCH BY TITLE:</label>
+          <input type="text" name="searchtitle" />&nbsp;&nbsp;
+          <button type="submit" class= "btn btn-primary" OnServerClick="SearchByTitle" runat="server">Search By Title</button>
+          </p>
+          <hr />
           <table>
           <thead>
               <tr>

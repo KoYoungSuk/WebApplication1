@@ -60,7 +60,7 @@ namespace WebApplication1
             return RowInserted;
         }
 
- 
+    
         public int UpdateBoard(BoardDTO boarddto, Boolean clicks)
         {
             //MODIFY = FALSE  DETAIL = TRUE 
@@ -224,6 +224,24 @@ namespace WebApplication1
             dr.Close();
             disconnectDB();
             return countnumber;
+        }
+
+        public int getBoardNumber(String title)
+        {
+
+            connectDB();
+            String sql = "select serial from board where title = :title";
+            OracleCommand scmd = new OracleCommand(sql, conn);
+            scmd.Parameters.Add(new OracleParameter("title", title));
+            OracleDataReader dr = scmd.ExecuteReader();
+            int number = 0;
+            while (dr.Read())
+            {
+                number = Int32.Parse(dr["serial"].ToString());
+            }
+            dr.Close();
+            disconnectDB();
+            return number;
         }
     }
 }

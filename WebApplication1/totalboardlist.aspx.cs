@@ -71,5 +71,21 @@ namespace WebApplication1
                  g.jsmessage(Response, ex.Message); 
              }
        }
+       protected void SearchByTitle(object sender, EventArgs e)
+        {
+            String title = Request.Form["searchtitle"];
+            String address = "detailboard.aspx?serial=";
+            try
+            {
+                BoardDAO boarddao = new BoardDAO(g.dburl, g.dbport, g.dbsid, g.dbid, g.dbpw);
+                int number = boarddao.getBoardNumber(title);
+                address = address + number;
+                Response.Redirect(address);
+            }
+            catch(Exception ex)
+            {
+                g.jsmessage(Response, ex.Message);
+            }
+        }
      }
  }
