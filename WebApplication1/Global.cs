@@ -14,7 +14,7 @@ namespace WebApplication1
         public String dburl = "localhost";
         public String dbport = "1521";
         public String dbsid = "xe";
-        // Core i5-3470 Server(Windows Server 2016 DataCenter 64-bit) 
+        // Xeon E3-1230 V2 Server(Windows Server 2016 DataCenter 64-bit) 
         // ID AND PW ARE COVERED DUE TO SECURITY ISSUE.
 
         public String connectionString(String dburl, String port, String sid, String id, String pw)
