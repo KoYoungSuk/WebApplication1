@@ -27,9 +27,11 @@ namespace WebApplication1.product
             try
             {
                 MemberDAO memberdao = new MemberDAO(g.dburl, g.dbport, g.dbsid, g.dbid, g.dbpw);
-                List<MemberDTO> memberlist = memberdao.GetMemberList();
+                //List<MemberDTO> memberlist = memberdao.GetMemberList();
+                SortedList<String, String> memberlist = memberdao.GetMemberListById(id);
                 if(memberlist != null)
                 {
+                    /*
                     foreach (MemberDTO memberdto in memberlist)
                     {
                         if (id.Equals("admin"))
@@ -45,6 +47,13 @@ namespace WebApplication1.product
                         {
                             check = false;
                         }
+                    }
+                    */
+                    String password_db = memberlist["password"];
+                    if(BCrypt.Net.BCrypt.Verify(password, password_db))
+                    {
+                        check = true;
+                        viewName = "productlist.aspx?desc=0&columnname=product_no";
                     }
                 }
                 else

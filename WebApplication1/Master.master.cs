@@ -39,8 +39,12 @@ namespace WebApplication1
             try
             {
                 MemberDAO memberdao = new MemberDAO(g.dburl, g.dbport, g.dbsid, g.dbid, g.dbpw);
-                List<MemberDTO> memberlist = memberdao.GetMemberList();
+
+                SortedList<String, String> memberlist = memberdao.GetMemberListById(id);
+                //List<MemberDTO> memberlist = memberdao.GetMemberList();
                 Boolean logincheck = false;
+
+                /*
                 foreach(MemberDTO memberdto in memberlist)
                 {
                     if (id.Equals(memberdto.Id))
@@ -54,6 +58,16 @@ namespace WebApplication1
                             break;
                         }
                     }
+                }
+                */
+                String password_db = memberlist["password"];
+                
+                if(BCrypt.Net.BCrypt.Verify(pw, password_db))
+                {
+                    Session["LOGIN_ID"] = id;
+                    Session["FIRST_NAME"] = memberlist["firstname"];
+                    Session["LAST_NAME"] = memberlist["lastname"];
+                    logincheck = true;
                 }
                 if (logincheck)
                 {

@@ -28,9 +28,13 @@ namespace WebApplication1.diary
             try
             {
                 MemberDAO memberdao = new MemberDAO(g.dburl, g.dbport, g.dbsid, g.dbid, g.dbpw);
-                List<MemberDTO> memberlist = memberdao.GetMemberList();
+
+                SortedList<String, String> memberlist = memberdao.GetMemberListById(id);
+
+                //List<MemberDTO> memberlist = memberdao.GetMemberList();
                 if (memberlist != null)
-                { 
+                {
+                    /*
                     foreach(MemberDTO memberdto in memberlist)
                     {
                         if (id.Equals("admin")){
@@ -42,6 +46,13 @@ namespace WebApplication1.diary
                             }
                         }
                     }
+                    */
+                    String password_db = memberlist["password"];
+                    if(BCrypt.Net.BCrypt.Verify(password, password_db))
+                    {
+                        check = true;
+                        viewName = "diarylist.aspx?desc=0";
+                    }
                 }
                 else
                 {
@@ -51,6 +62,8 @@ namespace WebApplication1.diary
                 if (check)
                 {
                     Session["LOGIN_ID"] = id;
+                    Session["FIRST_NAME"] = memberlist["firstname"];
+                    Session["LAST_NAME"] = memberlist["lastname"];
                     Response.Redirect(viewName);
                 }
             }catch(Exception ex)

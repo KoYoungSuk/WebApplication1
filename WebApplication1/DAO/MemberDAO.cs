@@ -100,6 +100,7 @@ namespace WebApplication1
             while (dr.Read())
             {
                 memberlist.Add("id", dr["id"].ToString());
+                memberlist.Add("password", dr["password"].ToString());
                 memberlist.Add("firstname", dr["firstname"].ToString());
                 memberlist.Add("lastname", dr["lastname"].ToString());
                 memberlist.Add("birthday", dr["birthday"].ToString());
