@@ -14,10 +14,25 @@ namespace WebApplication1
         Global g = new Global();
         protected void Page_Load(object sender, EventArgs e)
         {
-            String access = null; 
+            String access = null;
+            Boolean descbool = false;
+            String descstr = Request.QueryString["desc"];
+            if(descstr == null)
+            {
+                descstr = "0";
+            }
+            int desc = Int32.Parse(descstr);
+
+            
+            if(desc == 1)
+            {
+                descbool = true; 
+            }
+            
             if(Session["LOGIN_ID"] != null)
             {
                 LabelID.Text = Session["LOGIN_ID"].ToString();
+                
                 if (Session["LOGIN_ID"].Equals("admin"))
                 {
                     access = "admin";  
@@ -32,13 +47,14 @@ namespace WebApplication1
             else
             {
                 access = "anonymous";
+                LabelID.Text = "anonymous";
                 LabelMode.Text = "Anonymous Mode";
             }   
     
               try
               {
                    BoardDAO boarddao = new BoardDAO(g.dburl, g.dbport, g.dbsid, g.dbid, g.dbpw);
-                   List<BoardDTO> boardlist = boarddao.getBoardList2(false);
+                   List<BoardDTO> boardlist = boarddao.getBoardList2(descbool);
                    List<BoardDTO> newboardlist = new List<BoardDTO>();
                    int boardnumber = boarddao.getBoardCount(access);
                    for(int i=0; i<boardlist.Count; i++)

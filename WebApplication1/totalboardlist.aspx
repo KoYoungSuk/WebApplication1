@@ -12,6 +12,10 @@
           <button type="submit" class= "btn btn-primary" OnServerClick="SearchByTitle" runat="server">Search By Title</button>
           </p>
           <hr />
+         <button type="button" class="btn btn-primary" onclick="location.href='totalboardlist.aspx?desc=1'" >Descend</button>
+         &nbsp;&nbsp;
+         <button type="button" class="btn btn-primary" onclick="location.href='totalboardlist.aspx?desc=0'">Ascend</button>
+         <hr />
           <table>
           <thead>
               <tr>
