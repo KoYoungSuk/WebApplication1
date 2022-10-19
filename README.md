@@ -1,5 +1,6 @@
 # MyBlog Second Server(ASP.NET/Windows Server)
 
+NOTICE: This Repository is now read-only.
 ----------------------------------------------------------------------------------------------------------------------------------
 Microsoft .NET Framework 4.6(4.8)/ASP.NET 4.8/Microsoft Visual Studio Community 2019
 
